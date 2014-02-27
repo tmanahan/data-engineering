@@ -1,0 +1,14 @@
+<h1>Editing sale</h1>
+
+<% form_for(@sale) do |f| %>
+  <%= f.error_messages %>
+
+  Purchaser Name: <%= f.text_field(:purchaser_name)  %><br/>
+  Purchase Count:       <%= f.text_field(:purchase_count) %><br/>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @sale %> |
+<%= link_to 'Back', sales_path %>

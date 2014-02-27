@@ -1,0 +1,25 @@
+Data Engineering Application for Ted Manahan
+
+Setup and Run Notes:
+* Developed with ruby 1.8.7, rails 2.3.15, rake 0.8.7, MySQL 5.5.17 (our production environment)
+* My development OS is Windows XP; the application should run on any OS
+* Create the tables with db/create.sql: 'mysql -uroot -p ls_development < db/create.sql'
+* Edit config/database.yml and db/schema.rb as needed for your database password
+* Simple test have been developed; run with 'rake test' (requires db password in db/create.sql)
+* Run mongrel web server with 'ruby script/console -p <<port>>'
+* Access the main menu by going to the root of your server. You can upload a
+  data file, then return to the main menu to view merchants, items, and sales.
+
+Data Modeling Notes
+* Three tables are required to normalize the input file
+  - merchants: identified by name, no foreign key
+  - items: identified by description and merchant_id, foreign key = merchant_id
+  - sales: not uniquely identified, foreign key = item_id
+* Uploading the same data file multiple times results in new sales records. Merchants
+  and items records are reused based on the identifiers listed above.
+
+Other notes:
+* For a production system the loader should put sale_records.upload_action in
+  a transaction, aborting if any line is invalid
+* There is still some 'lint' in the code. The main example is that the 'create'
+  and 'new' functions in the controllers are not accessible from the GUI.

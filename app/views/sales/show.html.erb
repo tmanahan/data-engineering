@@ -1,0 +1,9 @@
+<b>Displaying Sale # <%= @sale.id %></b>
+<br/><br/>
+Purchaser Name: <%= @sale.purchaser_name %><br/>
+Purchase Count: <%= @sale.purchase_count %><br/>
+Item: <%= Item.find(@sale.item_id).description %><br/>
+<br/>
+
+<%= link_to 'Edit', edit_sale_path(@sale) %> |
+<%= link_to 'Back', sales_path %>

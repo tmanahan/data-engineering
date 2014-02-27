@@ -1,0 +1,9 @@
+<b>Displaying Item # <%= @item.id %></b>
+<br/><br/>
+Description: <%= @item.description %><br/>
+Price: <%= @item.price %><br/>
+Merchant: <%= Merchant.find(@item.merchant_id).name %><br/>
+<br/>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>

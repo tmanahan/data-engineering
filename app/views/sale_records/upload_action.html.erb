@@ -1,0 +1,16 @@
+<br/>
+<b>UPLOAD RESULTS</b>
+<br/>
+<br/>Total Amount of Gross Revenue: $<%= @total_amount_gross_revenue %>
+<br/>
+<br/>Lines in input file: <%= @line_count %>
+<br/>New merchant records created: <%= @new_merchant_count %>
+<br/>New item records created: <%= @new_item_count %>
+<br/>New sale records created: <%= @new_sale_count %>
+<br/>
+<%= "<br/>Error Messages:" if @error_array.length > 0 %>
+<% @error_array.each do |error_message| %>
+  <br/><%= "\t" + error_message %>
+<% end %>
+<br/>
+<a href=<%= sale_records_path %>>Upload another file.</a>
