@@ -19,6 +19,13 @@ Rails::Initializer.run do |config|
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
+  config.gem "rails", :version => "2.3.15"
+  config.gem "actionpack", :version => "2.3.11"
+  config.gem "activerecord", :version => "2.3.11"
+  config.gem "activeresource", :version => "2.3.11"
+  config.gem "mysql", :version => "2.8.1"
+  config.gem "rack", :version => "1.1.2"
+#  config.gem "activemodel", :version => "3.1.3"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named

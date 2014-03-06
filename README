@@ -2,9 +2,14 @@ Data Engineering Application for Ted Manahan
 
 Setup and Run Notes:
 * Developed with ruby 1.8.7, rails 2.3.15, rake 0.8.7, MySQL 5.5.17 (our production environment)
+* My development OS is Windows XP; the application should run on any OS
+* Ruby 1.8.7: Download 'rubyinstaller-1.8.7-p334.exe' from http://rubyforge.org/frs/?group_id=167.
+* Install gem (rubygems-1.5.0.zip) from http://rubyforge.org/frs/?group_id=126
+* Install rake: gem install rake -v 0.8.7
 * Note that there is no Gemfile
   - Rails 2.3 does not have built-in bundler support because it came out before Bundler
-* My development OS is Windows XP; the application should run on any OS
+  - Use rake gems:install which installs the gems in config/environment.rb
+* Depending on your MySQL database adaptor, you may need to copy db/libmySQL.dll to Ruby187/bin
 * Create the tables with 'rake db:create' and 'rake db:migrate'
 * Edit config/database.yml and db/schema.rb as needed for your database password
 * Simple test have been developed; run with 'rake test'
