@@ -3,9 +3,9 @@ Data Engineering Application for Ted Manahan
 Setup and Run Notes:
 * Developed with ruby 1.8.7, rails 2.3.15, rake 0.8.7, MySQL 5.5.17 (our production environment)
 * My development OS is Windows XP; the application should run on any OS
-* Create the tables with db/create.sql: 'mysql -uroot -p ls_development < db/create.sql'
+* Create the tables with 'rake db:create' and 'rake db:migrate'
 * Edit config/database.yml and db/schema.rb as needed for your database password
-* Simple test have been developed; run with 'rake test' (requires db password in db/create.sql)
+* Simple test have been developed; run with 'rake test'
 * Run mongrel web server with 'ruby script/console -p <<port>>'
 * Access the main menu by going to the root of your server. You can upload a
   data file, then return to the main menu to view merchants, items, and sales.
